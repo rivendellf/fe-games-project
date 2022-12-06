@@ -1,38 +1,97 @@
+header,
+body {
+  background-color: #efe3be;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#mainTitle {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #64462f;
+  font-size: 6vw;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.Nav {
+  padding: 10px;
+  margin: 15px;
+}
+
+.Nav--link {
+  margin: 10px;
+  padding: 10px;
+  color: #9a6056;
+  border: 2px solid #9a6056;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: ;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reviewContainer {
+  background-color: #9a6d65;
+  padding: 10px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#reviewList {
+  list-style: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#reviewTitle {
+  text-decoration: none;
+  color: #1e241f;
+  font-size: 22px;
+}
+
+#reviewImage {
+  max-width: 100%;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-height: 300px;
+}
+
+#reviewDesigner {
+  color: #efe3be;
+}
+
+#reviewCategory {
+  color: #efe3be;
+}
+
+#reviewOwner {
+  color: #1e241f;
+}
+
+#reviewCreatedAt {
+  color: #1e241f;
+}
+
+#reviewBody {
+  color: #efe3be;
+  padding: 5px;
+}
+
+#reviewComments {
+  color: #1e241f;
+  padding: 5px;
+}
+
+#reviewVotes {
+  color: #1e241f;
 }
