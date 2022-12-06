@@ -13,6 +13,11 @@ body {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+#loading {
+  color: #9a6056;
+  font-size: 20px;
+}
+
 .Nav {
   padding: 10px;
   margin: 15px;
@@ -44,6 +49,7 @@ body {
   margin: 15px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #reviewList {
@@ -56,11 +62,12 @@ body {
   text-decoration: none;
   color: #1e241f;
   font-size: 22px;
+  padding: 10px;
+  font-weight: bolder;
 }
 
 #reviewImage {
-  max-width: 100%;
-  padding-right: 10px;
+  max-width: 500px;
   padding-top: 10px;
   padding-bottom: 10px;
   max-height: 300px;
@@ -84,12 +91,10 @@ body {
 
 #reviewBody {
   color: #efe3be;
-  padding: 5px;
 }
 
 #reviewComments {
   color: #1e241f;
-  padding: 5px;
 }
 
 #reviewVotes {

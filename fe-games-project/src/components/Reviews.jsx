@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getReviews().then((reviews) => {
       setReviews(reviews);
+      setLoading(false);
     });
   }, []);
 
-  console.log(reviews, "reviews");
-
-  return (
+  return loading ? (
+    <p id="loading">...loading</p>
+  ) : (
     <ul id="reviewList">
       {reviews.map((review) => {
         return (
@@ -21,33 +23,19 @@ export const Reviews = () => {
             <Link to={`/reviews`} key={review.review_id} id="reviewTitle">
               {review.title}
             </Link>
-            <li key={review.review_img_url}>
-              <img
-                id="reviewImage"
-                src={review.review_img_url}
-                alt={review.title}
-              ></img>
-            </li>
-            <li key={review.designer} id="reviewDesigner">
-              Designed by: {review.designer}
-            </li>
-            <li key={review.category} id="reviewCategory">
-              Category: {review.category}
-            </li>
-            <li key={review.owner} id="reviewOwner">
-              User: {review.owner}
-            </li>
-            <li key={review.created_at} id="reviewCreatedAt">
-              Posted: {review.created_at}
-            </li>
-            <li key={review.review_body} id="reviewBody">
-              {review.review_body}
-            </li>
-            <li key={review.comment_count} id="reviewComments">
-              Comments: {review.comment_count}
-            </li>
-            <li key={review.votes} id="reviewVotes">
-              Votes: {review.votes}
+            <img
+              id="reviewImage"
+              src={review.review_img_url}
+              alt={review.title}
+            ></img>
+            <li id="reviewInfoList">
+              <p id="reviewDesigner">Designed by: {review.designer}</p>
+              <p id="reviewCategory">Category: {review.category}</p>
+              <p id="reviewOwner">User: {review.owner}</p>
+              <p id="reviewCreatedAt">Posted: {review.created_at}</p>
+              <p id="reviewBody">{review.review_body}</p>
+              <p id="reviewComments">Comments: {review.comment_count}</p>
+              <p id="reviewVotes">Votes: {review.votes}</p>
             </li>
           </div>
         );
