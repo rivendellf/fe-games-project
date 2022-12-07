@@ -6,14 +6,18 @@ import { Link } from "react-router-dom";
 export const SingleReview = () => {
   const { review_id } = useParams();
   const [singleReview, setSingleReview] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getSingleReview(review_id).then((review) => {
       setSingleReview(review);
+      setLoading(false);
     });
   }, [review_id]);
 
-  return (
+  return loading ? (
+    <p id="loading">...loading</p>
+  ) : (
     <>
       <main>
         <div className="singleReviewContainer">
@@ -30,7 +34,7 @@ export const SingleReview = () => {
             src={singleReview.review_img_url}
             alt={singleReview.title}
           ></img>
-          <ul id='singleReviewList'>
+          <ul id="singleReviewList">
             <li className="singleReviewInfo" key={singleReview.title}>
               <p id="reviewDesigner">Designed by: {singleReview.designer}</p>
               <p id="reviewCategory">Category: {singleReview.category}</p>
