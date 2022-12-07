@@ -3,6 +3,7 @@ import { Reviews } from "./components/Reviews";
 import { Route, Routes } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import { Header } from "./components/Header";
+import { SingleReview } from "./components/SingleReview";
 
 function App() {
   return (
@@ -11,7 +12,12 @@ function App() {
         <Nav />
         <Header />
         <Routes>
-          <Route path="/" id="reviewContainer" element={<Reviews />} />
+          <Route path="/reviews" id="reviewContainer" element={<Reviews />} />
+          <Route
+            path="/reviews/:review_id"
+            id="singleReviewContainer"
+            element={<SingleReview />}
+          />
         </Routes>
       </header>
     </div>

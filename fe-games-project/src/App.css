@@ -32,7 +32,6 @@ body {
   font-size: 15px;
   cursor: pointer;
   text-decoration: none;
-  text-transform: ;
 }
 
 .App {
@@ -45,17 +44,46 @@ body {
 
 .reviewContainer {
   background-color: #9a6d65;
-  padding: 10px;
+  padding: 12px;
   margin: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.singleReviewContainer {
+  background-color: #9a6d65;
+  padding: 12px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+.singleReviewList {
+  text-align: center;
+  padding: 10px
+}
+
+ul {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #reviewList {
   list-style: none;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.singleReviewInfo {
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
 }
 
 #reviewTitle {
@@ -67,9 +95,18 @@ body {
 }
 
 #reviewImage {
-  max-width: 500px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  max-width: 100%;
+  padding: 10px 10px 10px 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  max-height: 300px;
+}
+
+#singleReviewImage {
+  max-width: 100%;
+  padding: 10px 12px 5px 12px;
+  margin-right: 12px;
+  margin-left: 12px;
   max-height: 300px;
 }
 
