@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../api";
 import { Link } from "react-router-dom";
+import { Categories } from "./Categories";
 
-export const Reviews = () => {
+export const Reviews = ({ currentCategory, setCurrentCategory }) => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,6 +18,10 @@ export const Reviews = () => {
     <p id="loading">...loading</p>
   ) : (
     <>
+      <Categories
+        currentCategory={currentCategory}
+        setCurrentCategory={setCurrentCategory}
+      />
       <ul id="reviewList">
         {reviews.map((review) => {
           return (
