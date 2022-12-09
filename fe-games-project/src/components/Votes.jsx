@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export const Votes = ({ singleReviewVotes }) => {
   let { review_id } = useParams();
-  const [updateVotes, setUpdateVotes] = useState(0);
   const [currentVotes, setCurrentVotes] = useState(0);
 
   useEffect(() => {

@@ -180,3 +180,41 @@ ul {
   padding: 6px;
   margin: 5px;
 }
+
+#postCommentSection {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+
+  border-top: 1px solid 64462f;
+  border-bottom: 1px solid 64462f;
+  padding-top: 20px;
+}
+
+.PostComment {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 1px solid 64462f;
+}
+
+#newComment {
+  background-color: #efe3be;
+  border: 1px solid #64462f;
+  vertical-align: top;
+}
+
+#addCommentButton {
+  text-decoration: none;
+  background: #efe3be;
+  color: #1e241f;
+  cursor: pointer;
+  border: 2px solid #1e241f;
+  border-radius: 10px;
+  box-shadow: 1.5px 1.5px #1e241f;
+  padding: 5px;
+}

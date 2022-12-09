@@ -28,3 +28,14 @@ export const patchVotesByReviewId = (review_id, votes) => {
     return res.data.votes;
   });
 };
+
+export const postComment = (review_id, newCommentText) => {
+  const commentBody = { username: "jessjelly", comment: newCommentText };
+  console.log(commentBody, "commentBody");
+  console.log(review_id, "reviewID");
+  return gameReviewsApi
+    .post(`/reviews/${review_id}/comments`, commentBody)
+    .then((res) => {
+      return res.data.comment;
+    });
+};
