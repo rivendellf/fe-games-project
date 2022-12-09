@@ -61,12 +61,21 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-
 }
 
 .singleReviewList {
   text-align: center;
-  padding: 10px
+  padding: 10px;
+}
+.commentsContainer {
+  background-color: #9a6d65;
+  padding: 12px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid;
 }
 
 ul {
@@ -130,10 +139,44 @@ ul {
   color: #efe3be;
 }
 
-#reviewComments {
+#commentButton {
+  text-decoration: none;
+  background: #efe3be;
   color: #1e241f;
+  cursor: pointer;
+  border: 2px solid #1e241f;
+  border-radius: 10px;
+  box-shadow: 1.5px 1.5px #1e241f;
+  padding: 5px;
+}
+
+#commentsList {
+  color: #1e241f;
+}
+
+#reviewComments:active {
+  box-shadow: 0 0 0 #efe3be;
+}
+
+#commentAuthor {
+  color: #efe3be;
+}
+
+#commentCreatedAt {
+  color: #efe3be;
 }
 
 #reviewVotes {
   color: #1e241f;
+}
+.upVote {
+  background-color: #efe3be;
+  margin: 5px;
+  padding: 5px;
+}
+
+.downVote {
+  background-color: #efe3be;
+  padding: 6px;
+  margin: 5px;
 }

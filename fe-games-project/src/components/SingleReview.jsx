@@ -2,8 +2,11 @@ import { getSingleReview } from "../api";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Comments } from "./Comments";
+import { Votes } from "./Votes";
 
 export const SingleReview = () => {
+  const [toggleButton, setToggleButton] = useState(false);
   const { review_id } = useParams();
   const [singleReview, setSingleReview] = useState({});
   const [loading, setLoading] = useState(true);
@@ -41,8 +44,21 @@ export const SingleReview = () => {
               <p id="reviewOwner">User: {singleReview.owner}</p>
               <p id="reviewCreatedAt">Posted: {singleReview.created_at}</p>
               <p id="reviewBody">{singleReview.review_body}</p>
-              <p id="reviewComments">Comments: {singleReview.comment_count}</p>
-              <p id="reviewVotes">Votes: {singleReview.votes}</p>
+              <button
+                id="commentButton"
+                onClick={() => {
+                  setToggleButton((currentToggle) => {
+                    return !currentToggle;
+                  });
+                }}
+              >
+                View Comments
+              </button>
+              {toggleButton ? <Comments /> : null}
+
+              <p id="reviewVotes">
+                <Votes singleReviewVotes={singleReview.votes} />
+              </p>
             </li>
           </ul>
         </div>

@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import { Header } from "./components/Header";
 import { SingleReview } from "./components/SingleReview";
+import { Comments } from "./components/Comments";
+import { Votes } from "./components/Votes";
 
 function App() {
   return (
