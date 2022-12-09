@@ -4,10 +4,12 @@ const gameReviewsApi = axios.create({
   baseURL: "https://weary-lingerie-clam.cyclic.app/api",
 });
 
-export const getReviews = () => {
-  return gameReviewsApi.get("/reviews").then((res) => {
-    return res.data.reviews;
-  });
+export const getReviews = (category) => {
+  return gameReviewsApi
+    .get("/reviews", { params: { category } })
+    .then((res) => {
+      return res.data.reviews;
+    });
 };
 
 export const getSingleReview = (review_id) => {
@@ -31,11 +33,15 @@ export const patchVotesByReviewId = (review_id, votes) => {
 
 export const postComment = (review_id, newCommentText) => {
   const commentBody = { username: "jessjelly", comment: newCommentText };
-  console.log(commentBody, "commentBody");
-  console.log(review_id, "reviewID");
   return gameReviewsApi
     .post(`/reviews/${review_id}/comments`, commentBody)
     .then((res) => {
       return res.data.comment;
     });
+};
+
+export const getCategories = () => {
+  return gameReviewsApi.get("/categories").then((res) => {
+    return res.data.categories;
+  });
 };

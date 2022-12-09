@@ -1,7 +1,7 @@
 import { getCommentsByReviewId } from "../api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { PostComment } from "./PostComment";
+import { PostComment } from "./PostComment";
 import { postComment } from "../api";
 
 export const Comments = () => {
@@ -9,6 +9,7 @@ export const Comments = () => {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newComment, setNewComment] = useState("");
+  const [posting, setPosting] = useState(false);
 
   useEffect(() => {
     getCommentsByReviewId(review_id).then((commentObj) => {
@@ -19,8 +20,9 @@ export const Comments = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setPosting(true);
     postComment(review_id, newComment).then((commentFromApi) => {
-      console.log(commentFromApi, "comment from Api");
+      setPosting(false);
       setNewComment("");
       setComments((currentComments) => {
         const newComments = [...currentComments];
@@ -49,18 +51,12 @@ export const Comments = () => {
         })}
       </ul>
 
-      <section id="postCommentSection">
-        <form className="PostComment" onSubmit={handleSubmit}>
-          <label htmlFor="newComment">Add a comment</label>
-          <textarea
-            id="newComment"
-            value={newComment}
-            placeholder="Add your comment here"
-            onChange={(event) => setNewComment(event.target.value)}
-          ></textarea>
-          <button id="addCommentButton">Add</button>
-        </form>
-      </section>
+      <PostComment
+        newComment={newComment}
+        setNewComment={setNewComment}
+        handleSubmit={handleSubmit}
+        posting={posting}
+      />
     </>
   );
 };
