@@ -18,10 +18,6 @@ export const Reviews = ({ currentCategory, setCurrentCategory }) => {
     <p id="loading">...loading</p>
   ) : (
     <>
-      <Categories
-        currentCategory={currentCategory}
-        setCurrentCategory={setCurrentCategory}
-      />
       <ul id="reviewList">
         {reviews.map((review) => {
           return (
